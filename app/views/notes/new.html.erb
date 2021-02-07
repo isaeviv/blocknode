@@ -1,0 +1,33 @@
+<h1>Новая заметка</h1>
+
+<%= form_for :note, url: notes_path do |form| %>
+  <% if @note.errors.any? %>
+  <div id="error_explanation">
+      <h2>
+        <%= pluralize(@note.errors.count, "error") %> prohibited
+        this note from being saved:
+      </h2>
+      <ul>
+        <% @note.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <p>
+    <%= form.label :title %><br>   
+    <%= form.text_field(:title, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= form.label :body %><br>
+    <%= form.text_area(:body, {:class => 'form-control'}) %>
+  </p>
+
+  <p>
+    <%= form.submit({:class => 'btn btn-succes'}) %>
+  </p>
+<% end %>
+
+<%= link_to 'Назад', notes_path %>

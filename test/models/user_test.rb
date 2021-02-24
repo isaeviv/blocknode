@@ -38,13 +38,22 @@ class UserTest < ActiveSupport::TestCase
 
     test "email dolzhen sootvetstvovat' shablonu user@testovyj.domen " do
 
-      valid_adresses = %w[user@example.com USER@foo.com P_RI-VET@aaa.foo.com
+      valid_adresses = %w[testovyj@email.ru USER@foo.com P_RI-VET@aaa.foo.com
       privet.poka@foo.jp ilja+masha@baz.cn]
 
       valid_adresses.each do |valid_adress|
           @user.email = valid_adress
           assert @user.valid?, "#{valid_adress.inspect} invalid!"
       end
+    end
+
+    test "email validation should reject invalid addresses" do
+        invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
+                               foo@bar_baz.com foo@bar+baz.com]
+        invalid_addresses.each do |invalid_address|
+          @user.email = invalid_address
+          assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
+        end
 
     end
 

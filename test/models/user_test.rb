@@ -1,11 +1,11 @@
 require 'test_helper'
 
 class UserTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-  #zdes' propisanny testy dlja validacij ob'ekta (v dannom sluchae usera)
 
+  #test "the truth" do
+    #assert true
+  #end
+  #zdes' propisanny testy dlja validacij ob'ekta (v dannom sluchae usera)
 
     def setup
       @user = User.new(name: "Testovoe Imja", email: "testovyj@email.ru")
@@ -47,6 +47,8 @@ class UserTest < ActiveSupport::TestCase
       end
     end
 
+
+    #%w[el1 el2 el3 ...] sozdaet massiv
     test "email validation should reject invalid addresses" do
         invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                                foo@bar_baz.com foo@bar+baz.com]
@@ -55,6 +57,15 @@ class UserTest < ActiveSupport::TestCase
           assert_not @user.valid?, "#{invalid_address.inspect} should be invalid"
         end
 
+    end
+
+    #.dup dubliruet vse polja ob'ekta
+    #.upcase vozvodit tekst v verhnij registr
+    test "email dolzhen byt' unikal'nym!" do
+      duplicate_user = @user.dup
+      duplicate_user.email = @user.email.upcase
+      @user.save
+      assert_not duplicate_user.valid?
     end
 
 end

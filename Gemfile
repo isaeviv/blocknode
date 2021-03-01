@@ -43,9 +43,14 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  
-  gem 'bigdecimal', '1.3.5'
-  
-  
-end
 
+
+  #dobavljal na rannih etapah razrabotki dlja fiksa kakoj-to oshibki, uzhe ne pomnju kakoj
+  gem 'bigdecimal', '1.3.5'
+
+
+  #etot gem shifruet paroli dlja bezopasnogo hranenija v bd
+  gem 'bcrypt', '3.1.7'
+
+
+end

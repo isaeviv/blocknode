@@ -2,3 +2,6 @@
 
 require ::File.expand_path('../config/environment', __FILE__)
 run Rails.application
+
+#ubiraet soobschenija "warning" kotorye zasojajut vyvod terminala
+RUBYOPT='-W:no-deprecated -W:no-experimental'

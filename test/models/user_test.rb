@@ -8,7 +8,8 @@ class UserTest < ActiveSupport::TestCase
   #zdes' propisanny testy dlja validacij ob'ekta (v dannom sluchae usera)
 
     def setup
-      @user = User.new(name: "Testovoe Imja", email: "testovyj@email.ru")
+      @user = User.new(name: "Testovoe Imja", email: "testovyj@email.ru",
+        password:"ogurec1996", password_confirmation:"ogurec1996")
     end
 
     test "should be valid" do
@@ -49,7 +50,7 @@ class UserTest < ActiveSupport::TestCase
 
 
     #%w[el1 el2 el3 ...] sozdaet massiv
-    test "email validation should reject invalid addresses" do
+    test "email dolzhen byt' bez oshibok!" do
         invalid_addresses = %w[user@example,com user_at_foo.org user.name@example.
                                foo@bar_baz.com foo@bar+baz.com]
         invalid_addresses.each do |invalid_address|
@@ -66,6 +67,17 @@ class UserTest < ActiveSupport::TestCase
       duplicate_user.email = @user.email.upcase
       @user.save
       assert_not duplicate_user.valid?
+    end
+
+
+    test "parol' dolzhen suschestvovat'!" do
+      @user.password = @user.password_confirmation = " " * 6
+      assert_not @user.valid?
+    end
+
+    test "minimal'naja dlinna - 6 simvolov!" do
+      @user.password = @user.password_confirmation = "a" * 5
+      assert_not @user.valid?
     end
 
 end

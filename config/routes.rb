@@ -58,11 +58,8 @@ Rails.application.routes.draw do
 
   root 'notes#index', as: 'home'
 
-  resources :notes
-
   #get :destroy, to: 'notes#destroy', as: 'destroy'
- 
-  get 'reminders' => 'reminders#reminders', as: 'reminders'
 
+  resources :notes, :users, :reminders
 
 end

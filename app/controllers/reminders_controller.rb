@@ -1,7 +1,7 @@
 class RemindersController < ApplicationController
 
-	def reminders
+	def index
 
 	end
-	
+
 end

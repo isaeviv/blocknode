@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<% #<% ispolnjaet kod vnutri, a <%= ispolnjaet i vozvrascaet v shablon  %>
 <html>
 <head>
   <title>Blocknode</title>
@@ -12,25 +13,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header class="navbar navbar-fixed-top navbar-inverse">					
-  			<nav>
-  				<span class = "bar font-weight-bold"><big><big><big><big><big>Blocknode</big></big></big></big></big></span>
-  				<span><%=link_to "Заметки", notes_path %> </span>
-  				<span><%=link_to "Напоминания", reminders_path %> </span>
-       	</nav> 
 
-        <ul class="nav navbar-nav navbar-right">
-            <li><%=link_to "Home", "#"%></li>
-            <li>Help</li>
-            <li>Login</li>
-        </ul> 	
-
-	</header>
+    <%= render 'layouts/header'%>
     <div id="center-content">
 	    <%= yield %>
+      <%= render 'layouts/footer' %>
+      <%= debug(params) if Rails.env.development? %>
     </div>
 
 </body>
 
 </html>
-

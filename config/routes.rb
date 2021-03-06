@@ -57,6 +57,7 @@ Rails.application.routes.draw do
   #get 'notes' => 'notes#index', as: 'notes'
 
   root 'notes#index', as: 'home'
+  get 'signup' => 'users#new'
 
   #get :destroy, to: 'notes#destroy', as: 'destroy'
 

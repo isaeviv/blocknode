@@ -36,6 +36,7 @@ footer{
 	width: 1000px;
 }
 
+/* vrode dlja otladochnoj informacii*/
 @mixin box_sizing{
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -48,4 +49,17 @@ footer{
   width: 100%
   margin-top: 45px;
   @include box_sizing;
+}
+
+/* forma registracii  */
+
+input, textarea, select, .uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+
+input {
+  height: auto !important;
 }

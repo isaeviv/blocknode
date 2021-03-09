@@ -24,8 +24,8 @@ class UsersController < ApplicationController
   private
     #etot metod tuzhen dlja peredachi na server tol'ko razreshennyh atributov
     #odin iz sposobov zaschity
-    def params_requare
-      params.requare(:user).permit(:name, :email, :password, :password_confirmation)
+    def user_params
+      params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
 end

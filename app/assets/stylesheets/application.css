@@ -50,9 +50,8 @@ footer{
   margin-top: 45px;
   @include box_sizing;
 }
-
+/***********************************/
 /* forma registracii  */
-
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
@@ -63,3 +62,22 @@ input, textarea, select, .uneditable-input {
 input {
   height: auto !important;
 }
+ /**********************************/
+
+
+ /*dlja soobschenij ob oshibkah*/
+ #error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+ /**********************************/

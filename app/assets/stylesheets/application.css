@@ -46,7 +46,7 @@ footer{
 .debug_dump{
   clear: both;
   float: left;
-  width: 100%
+  width: 100%;
   margin-top: 45px;
   @include box_sizing;
 }
@@ -66,7 +66,7 @@ input {
 
 
  /*dlja soobschenij ob oshibkah*/
- #error_explanation {
+/* #error_explanation {
   color: red;
   ul {
     color: red;
@@ -77,7 +77,10 @@ input {
 .field_with_errors {
   @extend .has-error;
   .form-control {
-    color: $state-danger-text;
+    color: red;
   }
 }
+*/
+
+
  /**********************************/

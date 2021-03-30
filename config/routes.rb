@@ -1,4 +1,18 @@
 Rails.application.routes.draw do
+  #get 'notes' => 'notes#index', as: 'notes'
+
+  root 'notes#index', as: 'home'
+  get    'signup'  => 'users#new'
+  get    'login'   => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  delete 'logout'  => 'sessions#destroy'
+
+  #get :destroy, to: 'notes#destroy', as: 'destroy'
+
+  resources :notes, :users, :reminders
+
+end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -53,14 +67,3 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
-
-  #get 'notes' => 'notes#index', as: 'notes'
-
-  root 'notes#index', as: 'home'
-  get 'signup' => 'users#new'
-
-  #get :destroy, to: 'notes#destroy', as: 'destroy'
-
-  resources :notes, :users, :reminders
-
-end

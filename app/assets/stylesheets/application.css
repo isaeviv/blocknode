@@ -14,6 +14,11 @@
  *= require_self
  */
 
+*, *:after, *:before{
+  margin: 0;
+  padding: 0;
+}
+
 body{
  	font-family: 'Comfortaa', cursive;
  	background-color: #B2C8C3;
@@ -22,6 +27,16 @@ body{
  header{
  	background-color: #63B09F;
  	color: DarkSlateBlue;
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-align: center;
+  align-items: center;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: .5rem 1rem;
 }
 
 footer{
@@ -31,21 +46,21 @@ footer{
   color: #777;
 }
 
+
+ a{
+   text-decoration: none;
+ }
+
+ a:link{
+  color:DarkSlateBlue;
+ }
+
+
+
 #center-content{
 	margin: 0 auto;
 	width: 1000px;
 }
-
-# ul.hr {
-    margin: 0; /* Обнуляем значение отступов */
-    padding: 4px; /* Значение полей */
-   }
-   ul.hr li {
-    display: inline; /* Отображать как строчный элемент */
-    margin-right: 5px; /* Отступ слева */
-    border: 1px solid #000; /* Рамка вокруг текста */
-    padding: 3px; /* Поля вокруг текста */
-   }
 
 /* vrode dlja otladochnoj informacii*/
 @mixin box_sizing{

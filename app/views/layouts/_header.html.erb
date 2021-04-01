@@ -1,12 +1,12 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
+<header>
       <nav>
-        <span class = "bar font-weight-bold"><big><big><big><big><big>Blocknode</big></big></big></big></big></span>
+        <span class = "header-label">Blocknode</span>
         <span><%=link_to "Заметки", notes_path %> </span>
         <span><%=link_to "Напоминания", reminders_path %> </span>
       </nav>
 
 
-      <ul class="nav navbar-nav navbar-right hr">
+      <ul>
           <li><%=link_to "Home", "#"%></li>
           <li><%=link_to "Help", '#'%> </li>
           <% if logged_in? %>

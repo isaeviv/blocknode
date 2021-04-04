@@ -56,11 +56,11 @@ footer{
  }
 
 
-
 #center-content{
 	margin: 0 auto;
 	width: 1000px;
 }
+
 
 /* vrode dlja otladochnoj informacii*/
 @mixin box_sizing{
@@ -77,11 +77,11 @@ footer{
   @include box_sizing;
 }
 /***********************************/
-/* forma registracii  */
+/* forma registracii*/
 input, textarea, select, .uneditable-input {
   border: 1px solid #bbb;
   width: 100%;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
   @include box_sizing;
 }
 

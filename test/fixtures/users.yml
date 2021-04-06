@@ -1,1 +1,6 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+Zhmyh:
+  name: Жмышенко Валерий
+  email: isaevkajit@gmail.com
+  password_digest: <%= User.digest('password') %>

@@ -80,4 +80,9 @@ class UserTest < ActiveSupport::TestCase
       assert_not @user.valid?
     end
 
+
+    test "test usera s pustym dajgestom" do
+    assert_not @user.authenticated?('')
+    end
+
 end

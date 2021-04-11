@@ -1,4 +1,7 @@
+require 'bcrypt'
 class User < ActiveRecord::Base
+
+  attr_accessor :remember_token
       #zapusk validacij
       #validates eto prosto metod zapuskajuschij validacii
       #to zhe samoe chto i validates(:name, presence: true, i td...)
@@ -17,7 +20,7 @@ class User < ActiveRecord::Base
   #vozvrascaet dajdzhest dannoj stroki
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST:
-                                                  Bcrypt::Engine.cost
+                                                  BCrypt::Engine.cost
     BCrypt::Password.create(string, cost: cost)
   end
 
@@ -26,5 +29,22 @@ class User < ActiveRecord::Base
     SecureRandom.urlsafe_base64
   end
 
+  #zapominaet usera v baze dannyh dlja ispol'zovanija v postojannoj sessii
+  def remember
+    self.remember_token = User.new_token
+    update_attribute(:remember_digest, User.digest(remember_token))
+  end
+
+  #vernet true esli token sovpadet s dajdzhestom
+  #zdesj argument - eto novaja lokalnaja peremennaja (ne attr_accessor)
+  def authenticated?(remember_token)
+    return false if remember_digest.nil?
+    BCrypt::Password.new(remember_digest).is_password?(remember_token)
+  end
+
+  #zabyvaet usera
+  def forget
+    update_attribute(:remember_digest, nil)
+  end
 
 end

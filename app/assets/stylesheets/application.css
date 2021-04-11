@@ -40,10 +40,15 @@ body{
 }
 
 footer{
+  background-color: DarkSlateBlue;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #777;
+}
+
+footer{
+
 }
 
 
@@ -57,8 +62,11 @@ footer{
 
 
 #center-content{
-	margin: 0 auto;
-	width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 1000px;
 }
 
 

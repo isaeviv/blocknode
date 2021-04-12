@@ -24,38 +24,12 @@ body{
  	background-color: #B2C8C3;
  }
 
- header{
- 	background-color: #63B09F;
- 	color: DarkSlateBlue;
-  position: relative;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  -ms-flex-align: center;
-  align-items: center;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  padding: .5rem 1rem;
-}
-
-footer{
-  background-color: DarkSlateBlue;
-  margin-top: 45px;
-  padding-top: 5px;
-  border-top: 1px solid #eaeaea;
-  color: #777;
-}
-
-footer{
-
-}
+ 
 
 
  a{
    text-decoration: none;
  }
-
  a:link{
   color:DarkSlateBlue;
  }
@@ -70,32 +44,6 @@ footer{
 }
 
 
-/* vrode dlja otladochnoj informacii*/
-@mixin box_sizing{
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-.debug_dump{
-  clear: both;
-  float: left;
-  width: 100%;
-  margin-top: 45px;
-  @include box_sizing;
-}
-/***********************************/
-/* forma registracii*/
-input, textarea, select, .uneditable-input {
-  border: 1px solid #bbb;
-  width: 100%;
-  margin-bottom: 20px;
-  @include box_sizing;
-}
-
-input {
-  height: auto !important;
-}
  /**********************************/
 
 

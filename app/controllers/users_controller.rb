@@ -22,7 +22,18 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
 
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+
+    else
+      render 'edit'
+    end
+  end
 
   private
     #etot metod tuzhen dlja peredachi na server tol'ko razreshennyh atributov

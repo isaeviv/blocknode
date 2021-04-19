@@ -3,7 +3,7 @@ require 'test_helper'
 class UsersLoginTest < ActionDispatch::IntegrationTest
 
   def setup
-    @user = users(:Zhmyh)
+    @user = users(:tester)
   end
 
   test "chtoby flash ne pojavljalsja lishnij raz" do

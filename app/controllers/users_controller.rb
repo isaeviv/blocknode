@@ -1,5 +1,9 @@
 class UsersController < ApplicationController
 
+  #predfil'try dlja zascity stranic userov
+  before_action :zaloginen, only: [:edit, :update]
+  before_action :korrektnyj, only: [:edit, :update]
+
   def index
   end
 
@@ -29,7 +33,8 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update_attributes(user_params)
-
+      flash[:succes] = "Profil' obnovlen!"
+      redirect_to @user
     else
       render 'edit'
     end
@@ -42,4 +47,17 @@ class UsersController < ApplicationController
       params.require(:user).permit(:name, :email, :password, :password_confirmation)
     end
 
+    #predfil'tr, podtverzhdajuscij vhod usera
+    def zaloginen
+      unless logged_in?
+        flash[:danger] = "Pozhalujsta vojdite v sistemu"
+        redirect_to login_url
+      end
+    end
+
+    #predfil'tr, podtveerzhdajuscij korrektnost' usera
+    def korrektnyj
+      @user = User.find(params[:id])
+      redirect_to(home_url) unless current_user?(@user)
+    end
 end

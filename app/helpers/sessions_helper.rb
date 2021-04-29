@@ -27,6 +27,11 @@ module SessionsHelper
    end
   end
 
+  #true esli uzer javljaetsja tekuscim
+  def current_user?(user)
+    user == current_user
+  end
+
   #istina esli user zashel
   def logged_in?
     !current_user.nil?

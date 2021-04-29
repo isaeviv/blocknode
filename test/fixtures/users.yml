@@ -4,3 +4,9 @@ tester:
   name: Тестер Тестенко
   email: testertestenko@test.test
   password_digest: <%= User.digest('password') %>
+
+vtoroj:
+  name: Vtoroj tester
+  email: vtoroj@tester.ru
+  password_digest: <%= User.digest('password')%>
+  

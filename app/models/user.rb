@@ -14,8 +14,9 @@ class User < ActiveRecord::Base
                 format: { with: VALID_EMAIL_REGEX },
                 uniqueness: {case_sensentive: false}
 
+  #otlavlivaet pustye paroli, vstroenaja validacija
   has_secure_password
-  validates :password, presence: true, length: {minimum: 6}
+  validates :password, presence: true, length: {minimum: 6}, allow_nil:true
 
   #vozvrascaet dajdzhest dannoj stroki
   def User.digest(string)

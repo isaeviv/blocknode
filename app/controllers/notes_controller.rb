@@ -1,7 +1,10 @@
 class NotesController < ApplicationController
 
+	before_action :zaloginen
+
 	def index
-		@note = Note.all
+		#@note = Note.where(user_id: "#{current_user}")
+		@note = current_user.note.all
 	end
 
 	def new
@@ -12,12 +15,12 @@ class NotesController < ApplicationController
 		@note = Note.find(params[:id])
 	end
 
-	def create		
-		@note = Note.new(note_params)
+	def create
+		@note = current_user.note.build(note_params)
 
 		if @note.save
 			redirect_to @note
-		else 
+		else
 			render 'new'
 		end
 		#render plain: params[:post].inspect
@@ -25,7 +28,7 @@ class NotesController < ApplicationController
 
 	def edit
 		@note = Note.find(params[:id])
-	end 
+	end
 
 	def update
 	  @note = Note.find(params[:id])
@@ -37,13 +40,13 @@ class NotesController < ApplicationController
 	  end
 	end
 
-	def destroy	
-		@note = Note.find(params[:id])	
+	def destroy
+		@note = Note.find(params[:id])
 		@note.destroy
 		redirect_to @note
 	end
 
 	private def note_params
-		params.require(:note).permit(:title, :body)
+		params.require(:note).permit(:title, :body, :user_id)
 	end
 end

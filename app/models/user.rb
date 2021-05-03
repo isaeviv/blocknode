@@ -1,6 +1,7 @@
 require 'bcrypt'
 class User < ActiveRecord::Base
 
+  has_many :note, dependent: :destroy
   attr_accessor :remember_token
       #zapusk validacij
       #validates eto prosto metod zapuskajuschij validacii

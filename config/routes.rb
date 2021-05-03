@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   #get 'notes' => 'notes#index', as: 'notes'
 
-  root 'sessions#new', as: 'home'
+  root 'notes#index', as: 'home'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

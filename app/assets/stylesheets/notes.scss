@@ -1,3 +1,32 @@
 // Place all the styles related to the notes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.contur{
+  border: 2px solid grey;
+  background-color: #63b09f5c;
+  margin: 10px;
+  padding: 10px;
+  align-content: space-between;
+  width: 200px;
+  height: 150px;
+  display: inline-grid;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.text_note{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+}
+
+
+#body_note{
+  font-size:15px;
+  text-align: justify;
+  word-break: break-all;
+}

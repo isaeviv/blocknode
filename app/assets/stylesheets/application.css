@@ -22,10 +22,9 @@
 body{
  	font-family: 'Comfortaa', cursive;
  	background-color: #B2C8C3;
+  height:100%;
+  margin:0;
  }
-
- 
-
 
  a{
    text-decoration: none;
@@ -40,9 +39,44 @@ body{
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
+  padding-bottom: 10rklpx;
   width: 1000px;
+  position: relative;
+  min-height: calc(100vh - 80px);
 }
 
+.knopka{
+  border: 1px solid #bbb;
+  width: 25%;
+  height: auto;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 2px;
+  font-size: 25px;
+  font-family: 'Comfortaa';
+  text-indent: 10px;
+
+}
+
+.danger{
+  margin: 5px;
+  border: 2px solid #b32a2a;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: #ff00005c;
+  font-size: 20px;
+  font-weight: bolder;
+}
+
+.formy{
+  width: fit-content;
+  height: fit-content;
+  background-color: #63b09f5c;
+  margin-left: auto;
+  margin-right: auto;
+  border: 2px solid #483d8b;
+  border-radius: 5px;
+}
 
  /**********************************/
 

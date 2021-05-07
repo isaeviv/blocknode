@@ -1,21 +1,36 @@
 <% provide(:title, "Log in") %>
-<h1>Log in</h1>
-<div>
-    <%= form_for(:session, url: login_path) do |f| %>
+<div class="formy">
 
-      <%= f.label :email %>
-      <%= f.email_field :email %>
+  <section class= "login">
+    <h1>Вход</h1>
+  </section>
 
-      <%= f.label :password %>
-      <%= f.password_field :password %>
+      <section class="login">
+        <%= form_for(:session, url: login_path) do |f| %>
 
-      <%= f.label :remember_me do %>
-        <%= f.check_box :remember_me %>
-        <div class="rememberMe">Запомнить меня</div>
+          <section class="vhod">
+            <%= f.label :email %>
+            <%= f.email_field :email %>
+          </section>
+
+          <section class="vhod">
+            <%= f.label :password, "Пароль" %>
+            <%= f.password_field :password %>
+          </section>
+
+          <section class = "merem">
+              <div class="remember-me">Запомнить меня</div>
+              <%= f.label  :remember_me do %>
+                <%= f.check_box :remember_me %>
+              <% end %>
+            <%= f.submit "Войти", id: "knopka-vhoda"%>
+          </section>
+
         <% end %>
-      <%= f.submit "Log in" %>
+      </section>
 
-    <% end %>
+      <section class="login">
+        <p>Впервые на сайте? <%= link_to "Зарегистрируйтесь!", signup_path %></p>
+      </section>
 
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
 </div>

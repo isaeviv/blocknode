@@ -7,14 +7,11 @@
 
 
       <ul>
-          <li><%=link_to "Home", "#"%></li>
           <li><%=link_to "Help", '#'%> </li>
+          
           <% if logged_in? %>
           <li><%= link_to "Users", '#' %></li>
           <li>
-            <a href="#">
-              Account
-            </a>
             <ul>
               <li><%= link_to "Profile", current_user %></li>
               <li><%= link_to "Settings", edit_user_path(current_user) %></li>

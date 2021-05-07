@@ -1,20 +1,23 @@
+<section>
   <h1>Все заметки</h1>
   <%= link_to 'Новая заметка', new_note_path %>
-  <table>
-    <tr>
-      <th>Title</th>
-      <th>Text</th>
-      <th></th>
-    </tr>
-  	<% @note.each do |note| %>
-  		<tr>
-  			<td><%= note.title %></td>
-  			<td> <%= note.body %></td>
-  			<td> <%= link_to 'Открыть', note_path(note) %> </td>
-  			<td> <%= link_to 'Редактировать', edit_note_path(note) %> </td>
-  			 <td><%= link_to 'Удалить', note_path(note),
-                method: :delete,
-                data: { confirm: 'Вы уверены?' } %></td>
-  		</tr>
-  	<% end %>
-  </table>
+</section>
+
+<section>
+  <% @note.each do |note| %>
+    <div class="contur">
+      <section class = text_note>
+        <h3><%= note.title %></h3>
+        <p id = "body_note"><%= note.body %></p>
+      </section>
+      <section>
+        <p><%= link_to 'Открыть', note_path(note) %></p>
+        <p><%= link_to 'Редактировать', edit_note_path(note) %></p>
+        <p><%= link_to 'Удалить', note_path(note),
+                 method: :delete,
+                 data: { confirm: 'Вы уверены?' } %></p>
+      </section>
+    </div>
+  <% end %>
+
+</section>

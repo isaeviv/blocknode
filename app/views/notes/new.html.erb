@@ -2,7 +2,7 @@
 
 <%= form_for :note, url: notes_path do |form| %>
   <% if @note.errors.any? %>
-  <div id="error_explanation">
+  <div class="danger">
       <h2>
         <%= pluralize(@note.errors.count, "error") %> prohibited
         this note from being saved:
@@ -26,7 +26,7 @@
   </p>
 
   <p>
-    <%= form.submit() %>
+    <%= form.submit(class: "knopka", text: "Сохранить заметку")%>
   </p>
 <% end %>
 

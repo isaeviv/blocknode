@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   #predfil'tr, podtverzhdajuscij vhod usera
   def zaloginen
     unless logged_in?
-      flash[:danger] = "Pozhalujsta vojdite v sistemu"
+      flash[:danger] = "Пожалуйста, войдите в систему"
       redirect_to login_url
     end
   end

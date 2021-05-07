@@ -1,29 +1,42 @@
 <% provide(:title, 'Edit user') %>
-<h1>Sign up</h1>
+<h1>Редактирование профиля</h1>
 
-<div>
-  <div>
+  <div class="formy">
+    <section class="login">
       <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages' %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name %>
+        <section class=vhod>
+          <%= f.label :name %>
+          <%= f.text_field :name %>
+        </section>
 
-        <%= f.label :email %>
-        <%= f.email_field :email %>
+        <section class="vhod">
+          <%= f.label :email %>
+          <%= f.email_field :email %>
+        </section>
 
-        <%= f.label :password %>
-        <%= f.password_field :password %>
+        <section class="vhod">
+          <%= f.label :password , "Пароль" %>
+          <%= f.password_field :password %>
+        </section>
 
-        <%= f.label :password_confirmation, "Confirmation" %>
-        <%= f.password_field :password_confirmation %>
+        <section class="vhod">
+          <%= f.label :password_confirmation, "Confirmation" %>
+          <%= f.password_field :password_confirmation, id: "confirm-pass"%>
+        </section>
 
-        <%= f.submit "Save changes" %>
+        <section class="vhod">
+          <%= f.submit "Применить изменения" , id: "knopka-vhoda" %>
+        </section>
+
+        <section class="vhod">
+          <%= link_to "Изменить свой граватар" , "http://gravatar.com/emails", class: "gravatar"%>
+          <%= gravatar_for @user %>
+        </section>
+
       <% end %>
 
-      <div>
-        <%= gravatar_for @user %>
-        <a href="http://gravatar.com/emails" target="_blank">change</a>
-      </div>
+
+    </section>
   </div>
-</div>

@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
-  <div class="error_explanations">
-    <div class="alert alert-danger">
+  <div class="danger" >
+    <div >
       Форма содержит <%= pluralize(@user.errors.count, "ошибок") %>
     </div>
     <ul>

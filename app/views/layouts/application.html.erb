@@ -16,12 +16,15 @@
 
     <%= render 'layouts/header'%>
     <div id="center-content">
+
       <% flash.each do |message_type, message| %>
-        <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <div class = "danger"><%= message %></div>
       <% end %>
+
 	    <%= yield %>
-      <%= render 'layouts/footer' %>
+
     </div>
+    <%= render 'layouts/footer' %>
 
 </body>
 

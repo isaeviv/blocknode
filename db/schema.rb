@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210502054859) do
+ActiveRecord::Schema.define(version: 20210407142332) do
 
   create_table "notes", force: :cascade do |t|
     t.string   "title"
     t.text     "body"
+    t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer  "uid"
-    t.integer  "user_id"
   end
 
-  add_index "notes", ["user_id", "created_at"], name: "index_notes_on_user_id_and_created_at"
+  add_index "notes", ["user_id", nil], name: "index_notes_on_user_id_and_create_at"
   add_index "notes", ["user_id"], name: "index_notes_on_user_id"
 
   create_table "users", force: :cascade do |t|

@@ -1,4 +1,7 @@
-<h1>Новая заметка</h1>
+<section class="title-page">
+  <h1>Новая заметка</h1>
+</section>
+
 
 <%= form_for :note, url: notes_path do |form| %>
   <% if @note.errors.any? %>
@@ -15,19 +18,19 @@
     </div>
   <% end %>
 
-  <p>
+  <section class="vhod">
     <%= form.label :title %><br>
     <%= form.text_field :title %>
-  </p>
+  </section>
 
-  <p>
+  <section class="vhod">
     <%= form.label :body %><br>
-    <%= form.text_area :body %>
-  </p>
+    <%= form.text_area :body , id: "text-area"%>
+  </section>
 
-  <p>
-    <%= form.submit(class: "knopka", text: "Сохранить заметку")%>
-  </p>
+  <section class="vhod">
+    <%= form.submit(id: "knopka-vhoda", text: "Сохранить заметку")%>
+  </section>
 <% end %>
 
 <%= link_to 'Назад', notes_path %>

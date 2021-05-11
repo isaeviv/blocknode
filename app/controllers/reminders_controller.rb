@@ -4,4 +4,7 @@ class RemindersController < ApplicationController
 
 	end
 
+	def about
+	end
+
 end

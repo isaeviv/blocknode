@@ -7,21 +7,24 @@
 
 
       <ul>
-          <li><%=link_to "Help", '#'%> </li>
-          
+          <li class="pop">Помощь</li>
           <% if logged_in? %>
-          <li><%= link_to "Users", '#' %></li>
-          <li>
-            <ul>
-              <li><%= link_to "Profile", current_user %></li>
-              <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-              <li>
-                <%= link_to "Log out", logout_path, method: "delete" %>
-              </li>
-            </ul>
-          </li>
-        <% else %>
-          <li><%= link_to "Log in", login_path %></li>
-        <% end %>
+            <li><%= link_to "Профиль", current_user %></li>
+            <li><%= link_to "Опции", edit_user_path(current_user) %></li>
+            <li>
+              <%= link_to "Выйти", logout_path, method: "delete" %>
+            </li>
+          <% else %>
+            <li><%= link_to "Войти", login_path %></li>
+          <% end %>
       </ul>
+
+    <div class="dropdown" id="popup1">
+      <div class="dropdown-content">
+          <p>Если у вас возникли проблемы и вам требуется помощь -
+            свяжитесь с <%=link_to "разработчиком сайта" , "https://t.me/isaeviv"%>
+          </p>
+          <p id="pop2">Скрыть</p>
+      </div>
+    </div>
 </header>

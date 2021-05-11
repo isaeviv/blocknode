@@ -1,14 +1,16 @@
 <% provide(:title, @user.name) %>
-<div class="row">
-  <aside class="col-md-6">
-    <section class="user_info">
-      <h1>
+<section class="title-page">
+  <h1>Ваш профиль</h1>
+</section>
+
+<section id = "profil">
+    <section class="vhod">
+      <p>
         <%= gravatar_for @user %>
         Имя: <%= @user.name %>
-      </h1>
-      <h1>
+      </p>
+      <p>
         Почта: <%= @user.email %>
-      </h1>
+      </p>
     </section>
-  </aside>
-</div>
+</section>

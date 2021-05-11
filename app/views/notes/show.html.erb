@@ -1,5 +1,15 @@
-<h1><%= @note.title %></h1>
-<p><%= @note.body %></p>
-<p><%= link_to 'Редактировать', edit_note_path(@note) %></p>
+<section class = "title-page">
+  <h1><%= @note.title %></h1>
+</section>
 
-<p><%= link_to 'Назад', notes_path %></p>
+<section class="dlja-note">
+  <p><%= @note.body %></p>
+</section>
+
+
+<section class="dlja-note">
+  <p><%= link_to 'Редактировать', edit_note_path(@note) %></p>
+
+  <p><%= link_to 'Назад', notes_path %></p>
+
+</section>

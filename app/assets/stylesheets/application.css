@@ -33,16 +33,21 @@ body{
   color:DarkSlateBlue;
  }
 
+.title-page{
+  margin:10px;
+  display: flex;
+  justify-content: space-between;
+}
 
 #center-content{
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
   margin-bottom: 20px;
-  padding-bottom: 10rklpx;
+  padding-bottom: 10px;
   width: 1000px;
   position: relative;
-  min-height: calc(100vh - 80px);
+  min-height: calc(81vh - 80px);
 }
 
 .knopka{

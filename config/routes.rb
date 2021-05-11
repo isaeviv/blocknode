@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   #get 'notes' => 'notes#index', as: 'notes'
 
-  root 'notes#index', as: 'home'
+  root 'reminders#about', as: 'home'
+
+  get "about" => 'reminders#about'
   get    'signup'  => 'users#new'
   get    'login'   => 'sessions#new'
   post   'login'   => 'sessions#create'

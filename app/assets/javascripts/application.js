@@ -26,10 +26,11 @@
 // }
 
 document.addEventListener('DOMContentLoaded', () => {
+
   var popupTrigger = document.querySelectorAll(".pop"),
   popupModel = document.querySelector("#popup1"),
   popupClose = document.querySelector("#pop2");
-
+  console.log(popupTrigger);
   popupTrigger.forEach(item => {
     console.log(item);
     item.addEventListener("click", ( ) => {

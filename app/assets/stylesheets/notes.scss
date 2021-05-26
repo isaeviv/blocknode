@@ -5,15 +5,19 @@
 
 .contur{
   border: 2px solid grey;
-  background-color: #63b09f5c;
-  margin: 10px;
-  padding: 10px;
-  align-content: space-between;
-  width: 200px;
-  height: 150px;
-  display: inline-grid;
-  border-radius: 5px;
-  overflow: hidden;
+    background-color: #63b09f5c;
+    /* margin: 10px; */
+    padding: 9px;
+    align-content: space-between;
+    /* width: 200px; */
+    height: 150px;
+    display: inline-grid;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 30%;
+    margin-bottom: 10px;
+    //flex-basis: 32%;
+    /* width: 100%;*/
 }
 
 .text_note{
@@ -26,6 +30,15 @@
 
 .dlja-note{
   margin:10px;
+}
+
+.notes-area{
+  display: flex;
+width: 100%;
+/* flex-flow: wrap; */
+justify-content: space-between;
+flex-wrap: wrap;
+/* flex-flow: row;*/
 }
 #text-area{
   font-family: "Comfortaa";
